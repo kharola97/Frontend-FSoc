@@ -45,7 +45,7 @@ const getRecipeById = async (recipeId) => {
   try {
     const token = getCookie('jwtoken');
     if (token) {
-      const response = await fetch(`https://rapp-t5nt.onrender.com/recipeById/${recipeId}`, {
+      const response = await fetch(`http://localhost:4500/recipeById/${recipeId}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -76,7 +76,7 @@ const getRecipeById = async (recipeId) => {
     const token = getCookie('jwtoken');
     if (token) {
         
-      const response = await fetch(`https://rapp-t5nt.onrender.com/getComment/${recipeId}`, {
+      const response = await fetch(`http://localhost:4500/getComment/${recipeId}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -123,7 +123,7 @@ const getRecipeById = async (recipeId) => {
       let decoded = jwt_decode(token)
       let userId = decoded.userId
 
-      let response = await fetch(`https://rapp-t5nt.onrender.com/deletecomment/${userId}/${recipeId}/${commentId}`,{
+      let response = await fetch(`http://localhost:4500/deletecomment/${userId}/${recipeId}/${commentId}`,{
         method:"DELETE",
         headers:{
           'Content-Type': 'application/json',
@@ -167,7 +167,7 @@ const getRecipeById = async (recipeId) => {
 
       //get the user ID from the decoded JWT
       const userId = decoded.userId;
-      const response = await fetch(`https://rapp-t5nt.onrender.com/comment/${userId}/${recipeId}`, {
+      const response = await fetch(`http://localhost:4500/comment/${userId}/${recipeId}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -85,7 +85,7 @@ function Recipe() {
                 //get the user ID from the decoded JWT
                   const userId = decoded.userId
                
-          const response = await fetch(`https://rapp-t5nt.onrender.com/recipe/${userId}`, {
+          const response = await fetch(`http://localhost:4500/recipe/${userId}`, {
             method:"POSt",
             headers:{
                 "Content-Type" : "application/json",

@@ -43,9 +43,7 @@ function Profile() {
 
 const getUserDetails = async()=>{
     try {
-      
-   
-    const token = getCookie('jwtoken');
+      const token = getCookie('jwtoken');
     if(token){
           
       //decode the JWT
@@ -53,7 +51,7 @@ const getUserDetails = async()=>{
 
         //get the user ID from the decoded JWT
     const userId = decoded.userId
-     const response = await fetch(`https://rapp-t5nt.onrender.com/getuserdetails/${userId}`,{
+     const response = await fetch(`http://localhost:4500/getuserdetails/${userId}`,{
       method:"GET",
       headers:{
         "Content-Type" : "application/json",
@@ -122,7 +120,7 @@ useEffect(() => {
       //decode the token
       const decoded = jwt_decode(token)
       const userId = decoded.userId
-      const response = await fetch(`https://rapp-t5nt.onrender.com/updateUserDetails/${userId}`,{
+      const response = await fetch(`http://localhost:4500/updateUserDetails/${userId}`,{
         method:"PUT",
         headers:{
           "Content-Type" : "application/json",

@@ -52,7 +52,7 @@ const getRecipeData = async () => {
 
     //get the user ID from the decoded JWT
     const userId = decoded.userId
-    let url = `https://rapp-t5nt.onrender.com/${userId}`;
+    let url = `http://localhost:4500/${userId}`;
   const params = [];
 
   if (dishName) {

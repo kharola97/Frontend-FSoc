@@ -84,7 +84,7 @@ function SignUp() {
       return;
     }
   
-    const response = await fetch(`https://rapp-t5nt.onrender.com/register`, {
+    const response = await fetch(`http://localhost:4500/register`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
